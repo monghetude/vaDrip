@@ -1,3 +1,5 @@
+console.log("render.js loaded");
+
 function renderVolunteerList(list) {
   const container = document.getElementById("volunteerList");
   container.innerHTML = "";
