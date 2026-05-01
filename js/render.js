@@ -97,3 +97,5 @@ function renderSkills(skills) {
     </div>
   `;
 }
+
+
