@@ -7,9 +7,17 @@ async function apiGet(action, params = {}) {
 }
 
 async function apiPost(data) {
-  const res = await fetch(API, {
+  const formData = new URLSearchParams();
+
+  for (const key in data) {
+    formData.append(key, JSON.stringify(data[key]));
+  }
+
+  await fetch(API, {
     method: "POST",
-    body: JSON.stringify(data)
+    body: formData,
+    mode: "no-cors" // IMPORTANT
   });
-  return res.json();
+
+  return { success: true };
 }
