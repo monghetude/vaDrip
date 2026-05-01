@@ -28,3 +28,20 @@ body {
   margin: 5% auto;
   width: 70%;
 }
+
+.skill-bar {
+  background: #eee;
+  height: 8px;
+  margin: 4px 0;
+}
+
+.fill {
+  background: #4caf50;
+  height: 100%;
+}
+
+.comment-box {
+  background: #f9f9f9;
+  padding: 8px;
+  margin: 5px 0;
+}
