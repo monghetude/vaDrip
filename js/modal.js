@@ -5,6 +5,8 @@ async function openModal(evalId) {
 
   const modal = document.getElementById("modal");
 
+  modal.classList.add("show");
+
   modal.innerHTML = `
     <div class="modal-content">
 
@@ -29,5 +31,5 @@ async function openModal(evalId) {
 }
 
 function closeModal() {
-  document.getElementById("modal").classList.add("hidden");
+  document.getElementById("modal").classList.remove("show");
 }
