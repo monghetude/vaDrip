@@ -40,6 +40,19 @@ async function toggleEvaluations(id) {
   container.classList.remove("hidden");
 }
 
+function renderList(title, items) {
+  if (!items || items.length === 0) return "";
+
+  return `
+    <div>
+      <p><b>${title}</b></p>
+      <ul>
+        ${items.map(i => `<li>${i}</li>`).join("")}
+      </ul>
+    </div>
+  `;
+}
+
 function renderSplash(s) {
   if (!s) return "<p>No Splash data</p>";
 
@@ -50,9 +63,9 @@ function renderSplash(s) {
       <p><b>Recommendation:</b> ${s.recommendation}</p>
       <p><b>Knowledge Areas:</b> ${s.knowledge}</p>
 
-      <p><b>Achieved:</b> ${s.achieved.join(", ")}</p>
-      <p><b>Missed:</b> ${s.missed.join(", ")}</p>
-      <p><b>Not Applicable:</b> ${s.na.join(", ")}</p>
+      <p><b>Achieved:</b> ${renderList("Achieved", s.achieved)}</p>
+      <p><b>Missed:</b> ${renderList("Missed", s.missed)}</p>
+      <p><b>Not Applicable:</b> ${renderList("Not Applicable", s.na)}</p>
 
       <p><b>Comments:</b></p>
       <div class="comment-box">${s.comments}</div>
