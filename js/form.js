@@ -47,7 +47,15 @@ async function submitDecision(evalId) {
     evaluationId: evalId,
     finalDecision: document.getElementById("decision").value,
     improvementCategories: rows.map(r => r.querySelector("select").value),
-    improvementNotes: rows.map(r => r.querySelector("input").value)
+    improvementNotes: rows.map(r => r.querySelector("input").value),
+
+    // ✅ ADD THESE
+    lyId: window.currentEvaluation?.lyId || "",
+    nickname: window.currentEvaluation?.name || "",
+    achieved: window.currentEvaluation?.achieved || [],
+    missed: window.currentEvaluation?.missed || [],
+    evaluator: window.currentEvaluation?.evaluator || "",
+    evaluatorComments: window.currentEvaluation?.comments || ""
   };
 
   await apiPost(payload);
