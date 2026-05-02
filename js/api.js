@@ -9,13 +9,9 @@ async function apiGet(action, params = {}) {
 async function apiPost(data) {
   const formData = new URLSearchParams();
 
-  formData.append("evaluationId", data.evaluationId);
-  formData.append("finalDecision", data.finalDecision);
-  formData.append("improvementCategories", JSON.stringify(data.improvementCategories));
-  formData.append("improvementNotes", JSON.stringify(data.improvementNotes));
-  formData.append("evaluationId", data.evaluationId);
-  formData.append("evaluator", data.evaluator || "");
-  formData.append("evaluatorComments", data.evaluatorComments || "");
+  Object.keys(data).forEach(key => {
+    formData.append(key, JSON.stringify(data[key]));
+  });
 
   await fetch(API, {
     method: "POST",
