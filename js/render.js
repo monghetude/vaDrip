@@ -59,6 +59,7 @@ function renderSplash(s) {
   return `
     <div class="section">
 
+      <p><b>Form Name:</b> ${s.formName} | STREAM Name: ${s.streamName}</p>
       <p><b>Evaluator:</b> ${s.evaluator}</p>
       <p><b>Recommendation:</b> ${s.recommendation}</p>
       <p><b>Knowledge Areas:</b> ${s.knowledge}</p>
