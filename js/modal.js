@@ -3,6 +3,12 @@ async function openModal(evalId) {
     evaluationId: evalId
   });
 
+    // ✅ STORE FOR LATER USE
+  window.currentEvaluation = {
+    ...data.splash,
+    ...data.ct
+  };
+
   const modal = document.getElementById("modal");
 
   modal.classList.add("show");
