@@ -63,9 +63,9 @@ function renderSplash(s) {
       <p><b>Recommendation:</b> ${s.recommendation}</p>
       <p><b>Knowledge Areas:</b> ${s.knowledge}</p>
 
-      <p><b>Achieved:</b> ${renderList("Achieved", s.achieved)}</p>
-      <p><b>Missed:</b> ${renderList("Missed", s.missed)}</p>
-      <p><b>Not Applicable:</b> ${renderList("Not Applicable", s.na)}</p>
+      <p>${renderList("Achieved:", s.achieved)}</p>
+      <p>${renderList("Missed:", s.missed)}</p>
+      <p>${renderList("Not Applicable:", s.na)}</p>
 
       <p><b>Comments:</b></p>
       <div class="comment-box">${s.comments}</div>
