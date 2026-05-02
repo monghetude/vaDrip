@@ -104,12 +104,22 @@ function renderSkills(skills) {
 
   return `
     <div class="skills">
-      ${skills.map(val => {
-        const percent = (val / 4) * 100;
+      ${skills.map(s => {
+        const percent = (s.score / 4) * 100;
 
         return `
-          <div class="skill-bar">
-            <div class="fill" style="width:${percent}%"></div>
+          <div class="skill-row">
+            <div class="skill-title">
+              ${s.title}
+            </div>
+
+            <div class="skill-bar">
+              <div class="fill" style="width:${percent}%"></div>
+            </div>
+
+            <div class="skill-score">
+              ${s.score}/4
+            </div>
           </div>
         `;
       }).join("")}
